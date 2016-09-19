@@ -35,3 +35,6 @@ for row in cur.execute(sqlstr):
     print str(row[0], row[1])
 
 cur.close()
+
+# running a dictionary in the database
+# so we can store a lot in the database and run one row at a time, save some memory!!!!
