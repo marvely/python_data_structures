@@ -73,7 +73,7 @@ for entry in all:
 
     cur.execute('''
     INSERT OR IGNORE INTO Album (title, artist_id) #<----- artist_id is the foriegn key
-    VALUES (?, ?)''', (title, artist_id))
+    VALUES (?, ?)''', (album, artist_id))
     cur.execute('SELECT id FROM Album WHERE title = ?', (album, ))
     album_id = cur.fetchone()[0]
 
@@ -82,3 +82,5 @@ for entry in all:
     VALUES (?, ?, ?, ?, ?)''', (name, album_id, length, rating, count)) #<------- 5 tuples
 
 conn.commit()
+
+cur.close()
