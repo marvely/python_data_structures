@@ -1,5 +1,5 @@
 #import numpy
-#import pylab
+import pylab
 from numpy import *
 ############ Numpy's array class is called: ndarray ###############
 a = arange(15).reshape(3,5)
@@ -79,22 +79,6 @@ b.sum(axis = 1) #<--------- sum of each row
 
 b.cumsum(axis = 1) #<------ cumulative sum along each row!!!!!
 
-
-
-
-
-# build a vector of 10000 normal deviates with variance = 0.5^2 and mean = 2
-'''
-mu, sigma = 2, 0.5
-
-v = numpy.random.normal(mu, sigma, 10000)
-
-pylab.hist(v, bin = 50, normed = 1)
-pylab.show()
-# cannot plot here.... plot at home
-
-# compute the histogram with numpy and then plot it
-(n, bins) = numpy.histogram(v, bins = 50, normed = True)
-pylab.plot(.5*(bins[1:] + bins[:-1]), n)
-pylab.show()
-'''
+#################### shape manipulation #############################
+a.ravel() #<-------------- flatten the array
+a.transpose() #<---------- transpose the array (2D) can we do 3D??
